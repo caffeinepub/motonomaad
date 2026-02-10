@@ -1,0 +1,21 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-10T04:21:39.569Z",
+  "summary": "The diff updates global theme tokens in frontend/src/index.css to an orange-forward primary with near-black dark backgrounds and switches the accent token to a red hue, including updating the brand wordmark gradient. Several top-level pages and the app shell show styling changes that appear aligned with improving contrast on dark/near-black backgrounds. No changes are shown under frontend/src/components/ui.",
+  "missing_requirements": [],
+  "hallucinated_features": [],
+  "confidence": 0.74,
+  "changed_files": [
+    "frontend-file-summaries.txt",
+    "frontend/src/components/brand/BrandLogo.tsx",
+    "frontend/src/components/layout/AppShell.tsx",
+    "frontend/src/index.css",
+    "frontend/src/pages/AboutPage.tsx",
+    "frontend/src/pages/ContactPage.tsx",
+    "frontend/src/pages/LandingPage.tsx",
+    "frontend/src/pages/PrivacyPage.tsx",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

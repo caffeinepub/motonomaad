@@ -1,0 +1,78 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-10T04:21:39.572Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 3,
+    "implemented": 3,
+    "items": [
+      {
+        "id": "REQ-25",
+        "summary": "Update the global Tailwind theme tokens to use an orange-forward palette and a near-black (black alternative) background so orange elements have strong contrast, in both light and dark modes.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/index.css",
+          "frontend/tailwind.config.js"
+        ],
+        "matchedFiles": [
+          "frontend/src/index.css",
+          "frontend/tailwind.config.js"
+        ]
+      },
+      {
+        "id": "REQ-26",
+        "summary": "Replace the current green/forest accent color token with a red accent token and ensure it is used only as an accent (not replacing primary orange), including gradients and decorative elements that reference the accent token.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/index.css",
+          "frontend/src/components/brand/BrandLogo.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/index.css",
+          "frontend/src/components/brand/BrandLogo.tsx"
+        ]
+      },
+      {
+        "id": "REQ-27",
+        "summary": "Audit top-level page sections (marketing and app) to ensure backgrounds and overlays complement the orange primary on dark/near-black backgrounds, adjusting any page-level utility classes that cause low contrast or clashing hues.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/LandingPage.tsx",
+          "frontend/src/components/layout/AppShell.tsx",
+          "frontend/src/pages/AboutPage.tsx",
+          "frontend/src/pages/ContactPage.tsx",
+          "frontend/src/pages/PrivacyPage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/LandingPage.tsx",
+          "frontend/src/components/layout/AppShell.tsx",
+          "frontend/src/pages/AboutPage.tsx",
+          "frontend/src/pages/ContactPage.tsx",
+          "frontend/src/pages/PrivacyPage.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/src/components/brand/BrandLogo.tsx",
+    "frontend/src/components/layout/AppShell.tsx",
+    "frontend/src/index.css",
+    "frontend/src/pages/AboutPage.tsx",
+    "frontend/src/pages/ContactPage.tsx",
+    "frontend/src/pages/LandingPage.tsx",
+    "frontend/src/pages/PrivacyPage.tsx",
+    "frontend/tailwind.config.js",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

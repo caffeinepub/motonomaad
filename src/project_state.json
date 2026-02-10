@@ -1,0 +1,320 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 15,
+  "summary": "Expand Motonomaad scope to include a polished marketing/landing website (in addition to the app) with standard company pages/content such as About Us.",
+  "architectural_notes": [
+    "Brand rename: update all user-facing strings/assets from \"Motonomad\" to \"Motonomaad\" consistently across the site/app.",
+    "Typography decision: use “Black Ops One” for headings (display/heading font).",
+    "Color direction: use orange prominently with dark/black alternative backgrounds to enhance contrast; allow red accents where appropriate."
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-create-the-motonomad-mvp-information-architecture-and-navigation-with-these-top-level-areas-trip-planner-mechanics-social-feed-groups-events-and-profile",
+      "title": "Create the Motonomad MVP information architecture and navigation with these top-level areas: Trip Planner, Mechanics, Social Feed, Groups, Events, and Profile.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-internet-identity-sign-in-and-a-basic-authenticated-user-experience-signed-in-vs-signed-out-across-the-app",
+      "title": "Implement Internet Identity sign-in and a basic authenticated user experience (signed-in vs signed-out) across the app.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-trip-planner-provide-a-form-where-a-rider-enters-source-destination-number-of-days-and-type-of-ride-and-display-a-curated-list-of-itinerary-suggestions-returned-from-the-backend",
+      "title": "Trip Planner: provide a form where a rider enters source, destination, number of days, and type of ride, and display a curated list of itinerary suggestions returned from the backend.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-mechanics-implement-a-directory-of-certified-mechanics-and-a-contact-request-flow-where-a-user-can-submit-a-troubleshooting-request-to-a-selected-mechanic",
+      "title": "Mechanics: implement a directory of certified mechanics and a contact/request flow where a user can submit a troubleshooting request to a selected mechanic.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-social-feed-allow-signed-in-users-to-create-posts-to-showcase-rides-gear-and-allow-all-users-to-browse-the-feed",
+      "title": "Social Feed: allow signed-in users to create posts to showcase rides/gear and allow all users to browse the feed.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-groups-implement-creating-groups-browsing-groups-joining-leaving-groups-and-viewing-a-group-details-page-with-membership-list-count",
+      "title": "Groups: implement creating groups, browsing groups, joining/leaving groups, and viewing a group details page with membership list/count.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-events-implement-creating-events-browsing-upcoming-events-joining-leaving-events-and-viewing-event-details-date-time-location-text-description",
+      "title": "Events: implement creating events, browsing upcoming events, joining/leaving events, and viewing event details (date/time, location text, description).",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-profile-implement-a-profile-page-that-shows-the-signed-in-user-s-basic-info-and-their-content-participation-their-posts-groups-they-joined-events-they-joined-and-mechanic-contact-requests-they-created",
+      "title": "Profile: implement a profile page that shows the signed-in user’s basic info and their content/participation (their posts, groups they joined, events they joined, and mechanic contact requests they created).",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-coherent-visual-theme-for-motonomad-distinct-style-colors-typography-spacing-and-components-suitable-for-motorcycle-travel-community-and-enforce-it-consistently-across-all-pages",
+      "title": "Apply a coherent visual theme for Motonomad (distinct style, colors, typography, spacing, and components) suitable for motorcycle travel/community, and enforce it consistently across all pages.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-generated-static-brand-assets-logo-hero-illustrations-to-the-frontend-as-static-files-and-use-them-in-the-ui-e-g-header-logo-area-and-landing-empty-states",
+      "title": "Add generated static brand assets (logo + hero/illustrations) to the frontend as static files and use them in the UI (e.g., header/logo area and landing/empty states).",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-new-public-landing-home-page-at-route-that-functions-as-a-full-marketing-website-entry-point-for-motonomad-not-the-trip-planner-with-high-quality-sections-such-as-hero-product-overview-key-features-how-it-works-and-clear-calls-to-action-to-explore-the-app-features",
+      "title": "Create a new public landing home page at route \"/\" that functions as a full marketing website entry point for Motonomad (not the Trip Planner), with high-quality sections such as: hero, product overview, key features, how it works, and clear calls-to-action to explore the app features.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-standard-marketing-company-pages-and-routes-including-an-about-us-page-and-ensure-they-are-accessible-from-the-site-navigation-and-footer",
+      "title": "Add standard marketing/company pages and routes, including an \"About Us\" page, and ensure they are accessible from the site navigation and footer.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-routing-and-navigation-so-the-marketing-website-and-the-existing-app-sections-coexist-cleanly-keep-the-current-app-feature-routes-trip-planner-mechanics-social-groups-events-profile-and-add-marketing-links-without-breaking-existing-navigation-behavior",
+      "title": "Update routing and navigation so the marketing website and the existing app sections coexist cleanly: keep the current app feature routes (Trip Planner, Mechanics, Social, Groups, Events, Profile) and add marketing links without breaking existing navigation behavior.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-new-timeline-section-to-the-marketing-landing-page-at-route-frontend-src-pages-landingpage-tsx-that-visually-presents-a-short-product-company-roadmap-history-as-a-sequence-of-milestones-with-a-consistent-layout-and-responsive-styling",
+      "title": "Add a new \"Timeline\" section to the marketing landing page at route \"/\" (frontend/src/pages/LandingPage.tsx) that visually presents a short product/company roadmap/history as a sequence of milestones with a consistent layout and responsive styling.",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-new-faq-section-to-the-marketing-landing-page-at-route-frontend-src-pages-landingpage-tsx-that-presents-common-questions-and-answers-in-an-accessible-expand-collapse-format-using-native-html-details-summary-or-existing-ui-components-without-modifying-any-files-under-frontend-src-components-ui",
+      "title": "Add a new \"FAQ\" section to the marketing landing page at route \"/\" (frontend/src/pages/LandingPage.tsx) that presents common questions and answers in an accessible expand/collapse format using native HTML (<details>/<summary>) or existing UI components without modifying any files under frontend/src/components/ui.",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-rename-all-user-facing-branding-text-from-motonomad-to-motonomaad-across-the-marketing-website-and-app-ui-including-the-logo-text-footer-copyright-line-and-landing-page-copy",
+      "title": "Rename all user-facing branding text from “Motonomad” to “Motonomaad” across the marketing website and app UI, including the logo text, footer copyright line, and landing page copy.",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-brandlogo-component-styling-so-the-logo-wordmark-feels-more-intuitive-and-premium-by-using-a-more-distinctive-font-treatment-and-a-cohesive-color-treatment-that-fits-the-existing-site-theme-without-changing-any-files-under-frontend-src-components-ui",
+      "title": "Update the BrandLogo component styling so the logo/wordmark feels more intuitive and premium by using a more distinctive font treatment and a cohesive color treatment that fits the existing site theme (without changing any files under frontend/src/components/ui).",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-rendered-logo-image-asset-usage-to-match-the-corrected-brand-spelling-by-adding-a-new-generated-logo-image-file-and-updating-the-brandlogo-component-to-reference-it-keeping-assets-served-statically-from-frontend-public-assets-generated",
+      "title": "Update the rendered logo image asset usage to match the corrected brand spelling by adding a new generated logo image file and updating the BrandLogo component to reference it (keeping assets served statically from frontend/public/assets/generated).",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-html-document-title-to-use-the-corrected-brand-spelling-motonomaad",
+      "title": "Update the HTML document title to use the corrected brand spelling “Motonomaad”.",
+      "reqIds": [
+        "REQ-20"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-marketing-landing-page-hero-copy-to-include-a-punchy-tagline-styled-similarly-to-the-uploaded-reference-image-short-uppercase-kicker-line-bold-high-impact-headline-while-keeping-the-brand-name-as-motonomaad",
+      "title": "Update the marketing landing page hero copy to include a punchy tagline styled similarly to the uploaded reference image (short uppercase kicker line + bold, high-impact headline), while keeping the brand name as “Motonomaad”.",
+      "reqIds": [
+        "REQ-21"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-refresh-the-site-wide-typography-by-replacing-the-current-google-fonts-and-updating-tailwind-font-families-so-the-app-marketing-pages-feel-less-boring-and-more-premium-including-clear-separation-between-body-font-and-display-heading-font",
+      "title": "Refresh the site-wide typography by replacing the current Google Fonts and updating Tailwind font families so the app/marketing pages feel less “boring” and more premium, including clear separation between body font and display/heading font.",
+      "reqIds": [
+        "REQ-22"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-align-brand-wordmark-styling-with-the-new-typography-by-updating-the-brandlogo-wordmark-styling-rules-so-the-header-footer-wordmark-matches-the-updated-font-direction-without-changing-any-files-under-frontend-src-components-ui",
+      "title": "Align brand wordmark styling with the new typography by updating the BrandLogo wordmark styling rules so the header/footer wordmark matches the updated font direction (without changing any files under frontend/src/components/ui).",
+      "reqIds": [
+        "REQ-23"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-load-the-google-font-black-ops-one-in-the-app-and-apply-it-as-the-site-wide-heading-typeface-h1-h6-by-updating-the-tailwind-heading-font-family-used-by-the-existing-global-heading-styles",
+      "title": "Load the Google Font “Black Ops One” in the app and apply it as the site-wide heading typeface (h1–h6) by updating the Tailwind heading font family used by the existing global heading styles.",
+      "reqIds": [
+        "REQ-24"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-global-tailwind-theme-tokens-to-use-an-orange-forward-palette-and-a-near-black-black-alternative-background-so-orange-elements-have-strong-contrast-in-both-light-and-dark-modes",
+      "title": "Update the global Tailwind theme tokens to use an orange-forward palette and a near-black (black alternative) background so orange elements have strong contrast, in both light and dark modes.",
+      "reqIds": [
+        "REQ-25"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-the-current-green-forest-accent-color-token-with-a-red-accent-token-and-ensure-it-is-used-only-as-an-accent-not-replacing-primary-orange-including-gradients-and-decorative-elements-that-reference-the-accent-token",
+      "title": "Replace the current green/forest accent color token with a red accent token and ensure it is used only as an accent (not replacing primary orange), including gradients and decorative elements that reference the accent token.",
+      "reqIds": [
+        "REQ-26"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-audit-top-level-page-sections-marketing-and-app-to-ensure-backgrounds-and-overlays-complement-the-orange-primary-on-dark-near-black-backgrounds-adjusting-any-page-level-utility-classes-that-cause-low-contrast-or-clashing-hues",
+      "title": "Audit top-level page sections (marketing and app) to ensure backgrounds and overlays complement the orange primary on dark/near-black backgrounds, adjusting any page-level utility classes that cause low contrast or clashing hues.",
+      "reqIds": [
+        "REQ-27"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Trip planner: user enters source, destination, number of days, and ride type to receive curated itinerary suggestions",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Mechanic contact feature to reach certified mechanics for troubleshooting/help",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Social feed/profile to showcase rides, gear, and related content",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Groups feature for riders to join communities within the platform",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Events feature for hosting and joining motorcycle ride events",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Implement backend data models and persistence for: user profile, trip itinerary suggestions, mechanic directory entries, mechanic contact requests, social posts, groups, group membership, events, and event attendance.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Create a polished, full-fledged marketing landing website for Motonomad including sections/pages like About Us (and other standard company/marketing content)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Add an FAQ section to the Motonomad marketing/landing website",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-11",
+      "summary": "Add a timeline section (e.g., product/company roadmap/history) to the Motonomad marketing/landing website",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-12",
+      "summary": "Update the brand/logo design to feel more intuitive by using improved fonts and color schemes",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-13",
+      "summary": "Rename branding/site text from \"Motonomad\" to \"Motonomaad\" across the product/marketing website",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-14",
+      "summary": "Add a brand tagline (e.g., on the landing page hero/header) to strengthen Motonomaad messaging",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-15",
+      "summary": "Refresh site typography by updating fonts to feel less boring/more premium across the marketing site/app UI",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-16",
+      "summary": "Use the Google Font “Black Ops One” for headings across the site/app typography",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-17",
+      "summary": "Update site/app visual theme to use an orange-forward palette with dark/black alternative backgrounds for contrast, with optional red accents",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "motonomaad",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

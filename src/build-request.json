@@ -1,0 +1,87 @@
+{
+  "kind": "build_request",
+  "title": "Update visual theme to orange-on-dark with optional red accents",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-25",
+      "text": "Update the global Tailwind theme tokens to use an orange-forward palette and a near-black (black alternative) background so orange elements have strong contrast, in both light and dark modes.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "use orange colors where ever necessary and the background must be an alternative of black so that orange looks good"
+        ]
+      },
+      "acceptanceCriteria": [
+        "In frontend/src/index.css, the CSS variables for --background/--card/--popover in .dark use a near-black / black-alternative background (not a brown/green-tinted dark), while maintaining readable --foreground contrast.",
+        "The primary color token remains clearly orange-forward (buttons/links that use primary read as orange across the app).",
+        "No changes are made to any files under frontend/src/components/ui."
+      ]
+    },
+    {
+      "id": "REQ-26",
+      "text": "Replace the current green/forest accent color token with a red accent token and ensure it is used only as an accent (not replacing primary orange), including gradients and decorative elements that reference the accent token.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "also you can use red assents too"
+        ]
+      },
+      "acceptanceCriteria": [
+        "In frontend/src/index.css, --accent and --accent-foreground are updated to a red-accent pair in both :root and .dark.",
+        "Brand wordmark gradient styling in frontend/src/index.css uses the updated red accent (via the accent color or updated stop values) so it no longer trends green.",
+        "Any existing UI areas using accent token (e.g., Landing page gradient sections using from-primary/... to-accent/...) render with a red-tinted accent rather than green."
+      ]
+    },
+    {
+      "id": "REQ-27",
+      "text": "Audit top-level page sections (marketing and app) to ensure backgrounds and overlays complement the orange primary on dark/near-black backgrounds, adjusting any page-level utility classes that cause low contrast or clashing hues.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "use orange colors where ever necessary and the background must be an alternative of black so that orange looks good"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Primary CTA buttons and key highlights remain clearly visible and readable on dark/near-black backgrounds across the header, footer, and the landing hero/CTA sections.",
+        "Muted/background section fills (e.g., bg-muted/30, gradients) do not wash out orange primary or create muddy contrast in dark mode.",
+        "No new user-facing copy is introduced as part of the styling adjustments."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not modify any files under frontend/src/components/ui (compose existing UI components instead).",
+    "Do not edit immutable paths listed in SYSTEM_CONTEXT (e.g., frontend/src/main.tsx, frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useActor.ts).",
+    "Keep the existing routing and feature pages intact; only adjust styling/theme as needed to achieve the requested palette."
+  ],
+  "nonGoals": [
+    "Adding new product features or changing backend APIs/data models.",
+    "Implementing third-party theming libraries or redesigning the information architecture.",
+    "Creating or replacing logo/hero images as part of this request (unless strictly necessary for contrast issues)."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [
+      "Prefer an orange-forward UI palette with near-black (black alternative) backgrounds and optional red accents."
+    ],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}

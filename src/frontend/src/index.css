@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Orange-forward theme with red accents - Light mode */
+    --background: oklch(98% 0.01 60);
+    --foreground: oklch(15% 0.02 60);
+
+    --card: oklch(100% 0 0);
+    --card-foreground: oklch(15% 0.02 60);
+
+    --popover: oklch(100% 0 0);
+    --popover-foreground: oklch(15% 0.02 60);
+
+    /* Vibrant orange primary */
+    --primary: oklch(62% 0.20 40);
+    --primary-foreground: oklch(98% 0.01 60);
+
+    /* Warm neutral secondary */
+    --secondary: oklch(88% 0.03 60);
+    --secondary-foreground: oklch(20% 0.02 60);
+
+    /* Red accent (replaces green) */
+    --accent: oklch(55% 0.22 25);
+    --accent-foreground: oklch(98% 0.01 60);
+
+    --muted: oklch(94% 0.02 60);
+    --muted-foreground: oklch(45% 0.02 60);
+
+    --destructive: oklch(55% 0.24 20);
+    --destructive-foreground: oklch(98% 0.01 60);
+
+    --border: oklch(88% 0.02 60);
+    --input: oklch(88% 0.02 60);
+    --ring: oklch(62% 0.20 40);
+
+    --radius: 0.5rem;
+
+    --success: oklch(65% 0.15 145);
+    --success-foreground: oklch(98% 0.01 60);
+
+    --warning: oklch(75% 0.15 75);
+    --warning-foreground: oklch(20% 0.02 60);
+
+    --chart-1: oklch(62% 0.20 40);
+    --chart-2: oklch(55% 0.22 25);
+    --chart-3: oklch(75% 0.15 75);
+    --chart-4: oklch(55% 0.24 20);
+    --chart-5: oklch(65% 0.15 145);
+  }
+
+  .dark {
+    /* Near-black backgrounds with orange primary and red accents - Dark mode */
+    --background: oklch(12% 0.01 60);
+    --foreground: oklch(96% 0.01 60);
+
+    --card: oklch(14% 0.01 60);
+    --card-foreground: oklch(96% 0.01 60);
+
+    --popover: oklch(14% 0.01 60);
+    --popover-foreground: oklch(96% 0.01 60);
+
+    /* Bright orange for dark backgrounds */
+    --primary: oklch(68% 0.22 40);
+    --primary-foreground: oklch(12% 0.01 60);
+
+    --secondary: oklch(22% 0.02 60);
+    --secondary-foreground: oklch(96% 0.01 60);
+
+    /* Bright red accent for dark mode */
+    --accent: oklch(62% 0.24 25);
+    --accent-foreground: oklch(96% 0.01 60);
+
+    --muted: oklch(20% 0.02 60);
+    --muted-foreground: oklch(65% 0.02 60);
+
+    --destructive: oklch(62% 0.26 20);
+    --destructive-foreground: oklch(96% 0.01 60);
+
+    --border: oklch(24% 0.02 60);
+    --input: oklch(24% 0.02 60);
+    --ring: oklch(68% 0.22 40);
+
+    --success: oklch(70% 0.17 145);
+    --success-foreground: oklch(12% 0.01 60);
+
+    --warning: oklch(80% 0.17 75);
+    --warning-foreground: oklch(12% 0.01 60);
+
+    --chart-1: oklch(68% 0.22 40);
+    --chart-2: oklch(62% 0.24 25);
+    --chart-3: oklch(80% 0.17 75);
+    --chart-4: oklch(62% 0.26 20);
+    --chart-5: oklch(70% 0.17 145);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+/* Brand wordmark styling with orange-to-red gradient */
+@layer components {
+  .brand-wordmark {
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    background: linear-gradient(135deg, oklch(62% 0.20 40) 0%, oklch(68% 0.22 35) 50%, oklch(55% 0.22 25) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 2px 8px oklch(62% 0.20 40 / 0.2);
+  }
+
+  .dark .brand-wordmark {
+    background: linear-gradient(135deg, oklch(68% 0.22 40) 0%, oklch(75% 0.24 35) 50%, oklch(62% 0.24 25) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 2px 12px oklch(68% 0.22 40 / 0.3);
+  }
+
+  .brand-logo-glow {
+    filter: drop-shadow(0 0 8px oklch(62% 0.20 40 / 0.3));
+  }
+
+  .dark .brand-logo-glow {
+    filter: drop-shadow(0 0 12px oklch(68% 0.22 40 / 0.4));
+  }
+}
