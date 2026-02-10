@@ -109,32 +109,115 @@
   }
 }
 
-/* Brand wordmark styling with orange-to-red gradient */
+/* Brand wordmark styling with enhanced contrast for near-black backgrounds */
 @layer components {
   .brand-wordmark {
     font-family: 'Bebas Neue', sans-serif;
     font-weight: 400;
-    letter-spacing: 0.05em;
-    background: linear-gradient(135deg, oklch(62% 0.20 40) 0%, oklch(68% 0.22 35) 50%, oklch(55% 0.22 25) 100%);
+    letter-spacing: 0.08em;
+    background: linear-gradient(135deg, oklch(65% 0.22 40) 0%, oklch(70% 0.24 35) 50%, oklch(58% 0.24 25) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-shadow: 0 2px 8px oklch(62% 0.20 40 / 0.2);
   }
 
   .dark .brand-wordmark {
-    background: linear-gradient(135deg, oklch(68% 0.22 40) 0%, oklch(75% 0.24 35) 50%, oklch(62% 0.24 25) 100%);
+    background: linear-gradient(135deg, oklch(75% 0.24 40) 0%, oklch(80% 0.26 35) 50%, oklch(70% 0.26 25) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-shadow: 0 2px 12px oklch(68% 0.22 40 / 0.3);
   }
 
   .brand-logo-glow {
-    filter: drop-shadow(0 0 8px oklch(62% 0.20 40 / 0.3));
+    filter: drop-shadow(0 0 6px oklch(62% 0.20 40 / 0.25));
   }
 
   .dark .brand-logo-glow {
-    filter: drop-shadow(0 0 12px oklch(68% 0.22 40 / 0.4));
+    filter: drop-shadow(0 0 10px oklch(68% 0.22 40 / 0.35));
+  }
+
+  /* Navigation link hover effects */
+  .nav-link {
+    position: relative;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: oklch(var(--primary));
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .nav-link::after {
+      transition: none;
+    }
+  }
+
+  /* Card hover effects */
+  .feature-card,
+  .timeline-card,
+  .faq-item {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .feature-card::before,
+  .timeline-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, oklch(var(--primary) / 0.05), transparent);
+    transition: left 0.5s ease;
+  }
+
+  .feature-card:hover::before,
+  .timeline-card:hover::before {
+    left: 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .feature-card::before,
+    .timeline-card::before {
+      display: none;
+    }
+  }
+}
+
+/* Utility classes for animations with reduced motion support */
+@layer utilities {
+  @media (prefers-reduced-motion: reduce) {
+    .motion-safe\:animate-fade-in,
+    .motion-safe\:animate-fade-in-up,
+    .motion-safe\:animate-slide-in-left {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+
+    .motion-safe\:hover\:scale-105:hover,
+    .motion-safe\:hover\:scale-110:hover,
+    .motion-safe\:hover\:-translate-y-1:hover,
+    .motion-safe\:hover\:translate-y-\[-8px\]:hover,
+    .motion-safe\:hover\:rotate-3:hover,
+    .motion-safe\:group-hover\:scale-110,
+    .motion-safe\:group-hover\:scale-105,
+    .motion-safe\:group-hover\:opacity-90,
+    .motion-safe\:group-focus-visible\:scale-105,
+    .motion-safe\:group-focus-visible\:opacity-90 {
+      transform: none;
+      opacity: 1;
+    }
   }
 }

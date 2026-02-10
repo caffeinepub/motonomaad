@@ -1,83 +1,21 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Orange-on-dark global theme with red accents",
+  "title": "Landing hero headline: Black Ops One font with filled orange “FREE”",
   "requirements": [
     {
-      "id": "REQ-25",
-      "summary": "Shift global theme tokens to an orange-forward palette with near-black backgrounds for strong contrast in both default and dark themes.",
+      "id": "REQ-36",
+      "summary": "Update the landing page hero headline to use the “Black Ops One” font and render “FREE” as filled primary orange text (no outline/transparent fill).",
       "acceptanceCriteria": [
-        "In frontend/src/index.css, the CSS variables for --background/--card/--popover in .dark use a near-black / black-alternative background (not a brown/green-tinted dark), while maintaining readable --foreground contrast.",
-        "The primary color token remains clearly orange-forward (buttons/links that use primary read as orange across the app).",
-        "No changes are made to any files under frontend/src/components/ui."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/index.css",
-          "operation": "modify",
-          "description": "Update :root and .dark CSS variable tokens to use a near-black neutral background/card/popover (no warm/green tint), keep high-contrast foregrounds, and ensure --primary remains clearly orange-forward. Also adjust supporting tokens (muted/border/input/ring/secondary/chart) as needed to preserve legibility on dark surfaces. Verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/tailwind.config.js",
-          "operation": "modify",
-          "description": "Align Tailwind theme color bindings with the CSS variable color format used in frontend/src/index.css so utilities like bg-background/text-foreground/text-primary render correctly after the token changes. Verify the component's usage instructions before implementing."
-        }
-      ]
-    },
-    {
-      "id": "REQ-26",
-      "summary": "Replace the existing green/forest accent token with a red accent and propagate it through gradients and decorative accent usage without replacing primary orange.",
-      "acceptanceCriteria": [
-        "In frontend/src/index.css, --accent and --accent-foreground are updated to a red-accent pair in both :root and .dark.",
-        "Brand wordmark gradient styling in frontend/src/index.css uses the updated red accent (via the accent color or updated stop values) so it no longer trends green.",
-        "Any existing UI areas using accent token (e.g., Landing page gradient sections using from-primary/... to-accent/...) render with a red-tinted accent rather than green."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/index.css",
-          "operation": "modify",
-          "description": "Replace --accent/--accent-foreground in :root and .dark with a red accent pair; update brand-wordmark gradient stops so the final stop uses the new red accent (or references the accent token) and no longer trends green. Verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/components/brand/BrandLogo.tsx",
-          "operation": "modify",
-          "description": "If needed after the token swap, fine-tune wordmark/logo classes to ensure the updated red accent is strictly decorative (wordmark gradient) while primary UI actions remain orange-forward. Verify the component's usage instructions before implementing."
-        }
-      ]
-    },
-    {
-      "id": "REQ-27",
-      "summary": "Audit and adjust page-level backgrounds/overlays so orange primary remains readable on near-black backgrounds and accent/gradient fills don’t muddy contrast.",
-      "acceptanceCriteria": [
-        "Primary CTA buttons and key highlights remain clearly visible and readable on dark/near-black backgrounds across the header, footer, and the landing hero/CTA sections.",
-        "Muted/background section fills (e.g., bg-muted/30, gradients) do not wash out orange primary or create muddy contrast in dark mode.",
-        "No new user-facing copy is introduced as part of the styling adjustments."
+        "On route \"/\", the hero headline “RIDE FREE. RIDE FAR.” is rendered using the Black Ops One font.",
+        "The “FREE” word is clearly filled with the orange primary color (not transparent fill), while the rest of the headline styling remains readable and consistent with the current hero layout.",
+        "No other user-facing text is changed as part of this update."
       ],
       "file_operations": [
         {
           "path": "frontend/src/pages/LandingPage.tsx",
           "operation": "modify",
-          "description": "Adjust hero/overview/how-it-works/CTA section background utility classes (gradients and muted fills) to better complement the new near-black theme, keeping orange primary CTAs/highlights crisp and avoiding washed-out or muddy overlays in dark mode; do not change copy. Verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/components/layout/AppShell.tsx",
-          "operation": "modify",
-          "description": "Audit and adjust header/footer container background, translucency, and muted section fills so navigation links and primary highlights remain readable on near-black backgrounds (especially dark mode), without changing any user-facing copy. Verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/pages/AboutPage.tsx",
-          "operation": "modify",
-          "description": "Adjust page-level hero gradient and muted section background utilities to avoid low-contrast/muddy sections under the updated near-black + orange/red palette; do not change copy. Verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/pages/ContactPage.tsx",
-          "operation": "modify",
-          "description": "Adjust page-level hero gradient and muted section background utilities to keep headings/CTAs readable and ensure accent/outline styling remains harmonious on near-black backgrounds; do not change copy. Verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/pages/PrivacyPage.tsx",
-          "operation": "modify",
-          "description": "Adjust page-level hero gradient and prose container contrast (background utilities only) so long-form text remains readable on near-black backgrounds; do not change copy. Verify the component's usage instructions before implementing."
+          "description": "Update the hero <h1> typography to use the existing Tailwind font token that maps to “Black Ops One” (e.g., switch from font-display to font-heading), and adjust the “FREE.” span to use the primary theme color as a normal filled text color (keep text-primary, remove the transparent fill/outline-only styling such as WebkitTextFillColor: 'transparent' and any stroke styling). Ensure only the hero headline styling changes and no other visible copy is modified."
         }
       ]
     }

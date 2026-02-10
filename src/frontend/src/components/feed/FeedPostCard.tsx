@@ -32,10 +32,10 @@ export default function FeedPostCard({ post }: FeedPostCardProps) {
   };
 
   return (
-    <Card>
+    <Card className="transition-all duration-300 motion-safe:hover:shadow-md motion-safe:hover:border-primary/30 motion-safe:animate-fade-in">
       <CardHeader>
         <div className="flex items-center gap-3">
-          <Avatar>
+          <Avatar className="transition-transform duration-300 motion-safe:hover:scale-110">
             <AvatarFallback>{initials}</AvatarFallback>
           </Avatar>
           <div>

@@ -42,12 +42,10 @@ export default function AppShell({ children }: AppShellProps) {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
-      <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
+      <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 transition-all duration-300">
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-8">
-            <Link to="/" className="flex items-center gap-3">
-              <BrandLogo />
-            </Link>
+            <BrandLogo />
             <nav className="hidden lg:flex items-center gap-6">
               {appLinks.map((link) => {
                 if (link.authRequired && !isAuthenticated) {
@@ -57,7 +55,7 @@ export default function AppShell({ children }: AppShellProps) {
                   <Link
                     key={link.to}
                     to={link.to}
-                    className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                    className="nav-link text-sm font-medium text-muted-foreground hover:text-foreground transition-all duration-200"
                     activeProps={{ className: 'text-foreground' }}
                   >
                     {link.label}
@@ -69,7 +67,7 @@ export default function AppShell({ children }: AppShellProps) {
                 <Link
                   key={link.to}
                   to={link.to}
-                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                  className="nav-link text-sm font-medium text-muted-foreground hover:text-foreground transition-all duration-200"
                   activeProps={{ className: 'text-foreground' }}
                 >
                   {link.label}
@@ -85,7 +83,7 @@ export default function AppShell({ children }: AppShellProps) {
             <Button
               variant="ghost"
               size="icon"
-              className="lg:hidden"
+              className="lg:hidden transition-transform duration-200 motion-safe:hover:scale-110"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -95,7 +93,7 @@ export default function AppShell({ children }: AppShellProps) {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden border-t border-border/40 bg-background/95 backdrop-blur">
+          <div className="lg:hidden border-t border-border/40 bg-background/95 backdrop-blur animate-fade-in">
             <nav className="container py-4 flex flex-col gap-4">
               {appLinks.map((link) => {
                 if (link.authRequired && !isAuthenticated) {
@@ -105,7 +103,7 @@ export default function AppShell({ children }: AppShellProps) {
                   <Link
                     key={link.to}
                     to={link.to}
-                    className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-2"
+                    className="text-sm font-medium text-muted-foreground hover:text-foreground transition-all duration-200 py-2 hover:translate-x-1"
                     activeProps={{ className: 'text-foreground' }}
                     onClick={() => setMobileMenuOpen(false)}
                   >
@@ -118,7 +116,7 @@ export default function AppShell({ children }: AppShellProps) {
                 <Link
                   key={link.to}
                   to={link.to}
-                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-2"
+                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-all duration-200 py-2 hover:translate-x-1"
                   activeProps={{ className: 'text-foreground' }}
                   onClick={() => setMobileMenuOpen(false)}
                 >
@@ -137,7 +135,7 @@ export default function AppShell({ children }: AppShellProps) {
       <footer className="border-t border-border/40 bg-muted/20 py-12 md:py-16">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-            <div className="space-y-4">
+            <div className="space-y-4 motion-safe:animate-fade-in-up">
               <BrandLogo />
               <p className="text-sm text-muted-foreground">
                 The ultimate platform for motorcycle adventurers. Plan routes, connect with mechanics, and join the
@@ -145,14 +143,14 @@ export default function AppShell({ children }: AppShellProps) {
               </p>
             </div>
 
-            <div>
+            <div className="motion-safe:animate-fade-in-up motion-safe:[animation-delay:100ms]">
               <h3 className="font-heading text-sm font-bold mb-4">Platform</h3>
               <ul className="space-y-2">
                 {appLinks.map((link) => (
                   <li key={link.to}>
                     <Link
                       to={link.to}
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                      className="text-sm text-muted-foreground hover:text-foreground transition-all duration-200 hover:translate-x-1 inline-block"
                     >
                       {link.label}
                     </Link>
@@ -161,14 +159,14 @@ export default function AppShell({ children }: AppShellProps) {
               </ul>
             </div>
 
-            <div>
+            <div className="motion-safe:animate-fade-in-up motion-safe:[animation-delay:200ms]">
               <h3 className="font-heading text-sm font-bold mb-4">Company</h3>
               <ul className="space-y-2">
                 {companyLinks.map((link) => (
                   <li key={link.to}>
                     <Link
                       to={link.to}
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                      className="text-sm text-muted-foreground hover:text-foreground transition-all duration-200 hover:translate-x-1 inline-block"
                     >
                       {link.label}
                     </Link>
@@ -177,13 +175,13 @@ export default function AppShell({ children }: AppShellProps) {
               </ul>
             </div>
 
-            <div>
+            <div className="motion-safe:animate-fade-in-up motion-safe:[animation-delay:300ms]">
               <h3 className="font-heading text-sm font-bold mb-4">Connect</h3>
               <ul className="space-y-2">
                 <li>
                   <a
                     href="mailto:support@motonomaad.com"
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    className="text-sm text-muted-foreground hover:text-foreground transition-all duration-200 hover:translate-x-1 inline-block"
                   >
                     Support
                   </a>
@@ -191,7 +189,7 @@ export default function AppShell({ children }: AppShellProps) {
                 <li>
                   <Link
                     to="/social"
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    className="text-sm text-muted-foreground hover:text-foreground transition-all duration-200 hover:translate-x-1 inline-block"
                   >
                     Community
                   </Link>
@@ -212,7 +210,7 @@ export default function AppShell({ children }: AppShellProps) {
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary hover:underline"
+                className="text-primary hover:underline transition-all duration-200"
               >
                 caffeine.ai
               </a>

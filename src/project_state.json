@@ -1,11 +1,14 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 15,
+  "projectStateVersion": 23,
   "summary": "Expand Motonomaad scope to include a polished marketing/landing website (in addition to the app) with standard company pages/content such as About Us.",
   "architectural_notes": [
     "Brand rename: update all user-facing strings/assets from \"Motonomad\" to \"Motonomaad\" consistently across the site/app.",
     "Typography decision: use “Black Ops One” for headings (display/heading font).",
-    "Color direction: use orange prominently with dark/black alternative backgrounds to enhance contrast; allow red accents where appropriate."
+    "Color direction: use orange prominently with dark/black alternative backgrounds to enhance contrast; allow red accents where appropriate.",
+    "Visual theme refinement: adjust the balance between stronger primary orange accents, selective red highlight accents, and a deeper near-black background tone to improve contrast and premium feel.",
+    "Add subtle, consistent UI motion/animation guidelines (hover/focus/enter transitions) to improve overall polish without hurting performance or accessibility (prefers-reduced-motion).",
+    "Hero tagline styling: “RIDE FREE. RIDE FAR.” should use Black Ops One, with the word “FREE” colored in orange."
   ],
   "known_issues": [],
   "isFixRequest": false,
@@ -217,6 +220,78 @@
         "REQ-27"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-adjust-the-global-theme-color-tokens-to-create-1-a-deeper-near-black-background-in-dark-mode-2-stronger-more-vibrant-orange-primary-accents-and-3-more-noticeable-red-accent-highlights-by-updating-the-css-custom-properties-in-frontend-src-index-css-for-both-root-and-dark",
+      "title": "Adjust the global theme color tokens to create (1) a deeper near-black background in dark mode, (2) stronger/more vibrant orange primary accents, and (3) more noticeable red accent highlights, by updating the CSS custom properties in frontend/src/index.css for both :root and .dark.",
+      "reqIds": [
+        "REQ-28"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-brand-wordmark-and-glow-styling-in-frontend-src-index-css-so-the-orange-to-red-gradient-and-glow-intensity-match-the-updated-stronger-orange-primary-and-stronger-red-accent-including-the-dark-variant-while-keeping-the-wordmark-legible-on-the-deeper-near-black-background",
+      "title": "Update brand wordmark and glow styling in frontend/src/index.css so the orange-to-red gradient and glow intensity match the updated stronger orange primary and stronger red accent (including the .dark variant), while keeping the wordmark legible on the deeper near-black background.",
+      "reqIds": [
+        "REQ-29"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-strengthen-the-visible-orange-red-accents-on-the-marketing-landing-page-by-adjusting-section-level-utility-classes-that-currently-use-very-subtle-from-primary-5-to-accent-5-gradients-e-g-the-hero-section-and-cta-card-in-frontend-src-pages-landingpage-tsx-so-the-accent-presence-is-more-pronounced-and-complements-the-deeper-near-black-background-in-dark-mode",
+      "title": "Strengthen the visible orange/red accents on the marketing landing page by adjusting section-level utility classes that currently use very subtle `from-primary/5` / `to-accent/5` gradients (e.g., the hero section and CTA card in frontend/src/pages/LandingPage.tsx) so the accent presence is more pronounced and complements the deeper near-black background in dark mode.",
+      "reqIds": [
+        "REQ-30"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-generate-and-add-a-new-higher-quality-motonomaad-logo-image-asset-same-brand-spelling-motonomaad-and-update-the-existing-logo-usage-so-the-site-uses-the-new-logo-consistently-anywhere-the-brandlogo-image-is-rendered",
+      "title": "Generate and add a new, higher-quality Motonomaad logo image asset (same brand spelling: “Motonomaad”) and update the existing logo usage so the site uses the new logo consistently anywhere the BrandLogo image is rendered.",
+      "reqIds": [
+        "REQ-31"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-tasteful-performant-transitions-animations-across-the-site-marketing-pages-and-app-sections-using-tailwind-utilities-and-existing-animation-tooling-focusing-on-subtle-page-section-entrance-transitions-and-interactive-hover-focus-micro-interactions-without-harming-readability-or-performance",
+      "title": "Add tasteful, performant transitions/animations across the site (marketing pages and app sections) using Tailwind utilities and existing animation tooling, focusing on subtle page/section entrance transitions and interactive hover/focus micro-interactions without harming readability or performance.",
+      "reqIds": [
+        "REQ-32"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-refine-the-brandlogo-presentation-to-feel-more-premium-by-tuning-sizing-spacing-and-hover-behavior-for-both-the-logo-mark-image-and-the-motonomaad-wordmark-while-keeping-the-current-spelling-and-existing-logo-image-asset-path-unchanged",
+      "title": "Refine the BrandLogo presentation to feel more premium by tuning sizing, spacing, and hover behavior for both the logo mark image and the “Motonomaad” wordmark, while keeping the current spelling and existing logo image asset path unchanged.",
+      "reqIds": [
+        "REQ-33"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-global-brand-css-rules-for-brand-wordmark-and-brand-logo-glow-in-frontend-src-index-css-to-fine-tune-gradient-contrast-and-glow-intensity-for-both-light-and-dark-modes-ensuring-legibility-on-near-black-backgrounds",
+      "title": "Update the global brand CSS rules for `.brand-wordmark` and `.brand-logo-glow` in `frontend/src/index.css` to fine-tune gradient, contrast, and glow intensity for both light and dark modes, ensuring legibility on near-black backgrounds.",
+      "reqIds": [
+        "REQ-34"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-fix-the-header-logo-link-structure-to-avoid-nested-navigation-links-by-ensuring-only-a-single-interactive-link-wraps-the-brandlogo-in-the-header-either-brandlogo-owns-the-link-or-appshell-does-while-keeping-the-same-click-target-behavior-navigates-to",
+      "title": "Fix the header logo link structure to avoid nested navigation links by ensuring only a single interactive link wraps the BrandLogo in the header (either BrandLogo owns the link, or AppShell does), while keeping the same click target behavior (navigates to “/”).",
+      "reqIds": [
+        "REQ-35"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-marketing-landing-page-hero-headline-ride-free-ride-far-frontend-src-pages-landingpage-tsx-so-the-headline-uses-the-black-ops-one-typeface-and-ensure-the-word-free-renders-in-orange-the-primary-theme-color-as-a-filled-text-color-not-transparent-outline-only",
+      "title": "Update the marketing landing page hero headline “RIDE FREE. RIDE FAR.” (frontend/src/pages/LandingPage.tsx) so the headline uses the “Black Ops One” typeface, and ensure the word “FREE” renders in orange (the primary theme color) as a filled text color (not transparent/outline-only).",
+      "reqIds": [
+        "REQ-36"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -309,6 +384,18 @@
     {
       "id": "AR-17",
       "summary": "Update site/app visual theme to use an orange-forward palette with dark/black alternative backgrounds for contrast, with optional red accents",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-18",
+      "summary": "Add tasteful site-wide transitions/animations (e.g., page/section/component transitions) to improve polish and perceived quality",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-19",
+      "summary": "Update hero tagline “RIDE FREE. RIDE FAR.” styling: set font to Black Ops One and color the word “FREE” in orange",
       "reqIds": [],
       "status": "pending"
     }
